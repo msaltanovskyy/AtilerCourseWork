@@ -1,0 +1,39 @@
+﻿@model AtilerCourseWork.Models.Fitting
+
+@{
+    ViewData["Title"] = "DeleteFitting";
+    Layout = null;
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<h1>Удалить примерку</h1>
+
+<h3>Вы уверены</h3>
+<div>
+    <h4>Примерка</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Order)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Order.workerId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Discription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Discription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeleteFitting">
+        <input type="hidden" asp-for="FittingId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+    </form>
+</div>

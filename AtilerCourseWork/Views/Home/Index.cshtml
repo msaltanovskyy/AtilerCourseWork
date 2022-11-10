@@ -1,0 +1,77 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@{
+    ViewData["Title"] = "Гланая страница";
+}
+
+<div>
+    @if (!User.IsInRole("Manager"))
+    {
+        <div class="container col-8">
+        <h2>Приведстувем,менеджер @User.Identity?.Name!</h2>
+        <h4>Рабочие</h4>
+        <p>
+            <a class = "btn btn-primary" asp-area="Identity" asp-page="/Account/Register">Добавить</a>
+        </p>
+        <iframe src = "/Manager/ListWorker" scrolling="yes"></iframe>
+        <h4>Должности</h4>
+        <iframe src = "/Manager/ListRole" scrolling="yes"></iframe>
+        <h4>Клиенты</h4>
+         <p>
+             <a class = "btn btn-primary" asp-controller = "Manager" asp-action="AddClient">Добавить</a>
+         </p>
+        <iframe src = "/Manager/ListClient" scrolling="yes"></iframe>
+        <h4>Закакзы</h4>
+         <p>
+             <a class = "btn btn-primary" asp-controller = "Manager" asp-action="AddOrder">Добавить</a>
+         </p>
+         <iframe src = "/Manager/ListOrder" scrolling="yes"></iframe>
+
+         <h4>Поставщики</h4>
+         <p>
+             <a class = "btn btn-primary" asp-controller = "Manager" asp-action="AddSuppliers">Добавить</a>
+         </p>
+        <iframe src = "/Manager/ListSuppliers" scrolling="yes"></iframe>
+        
+    </div>
+    }else{
+    <div class="container col-8">
+        <h2>Приведстувем, мастер @User.Identity?.Name!</h2>
+        <h4>Размеры</h4>
+         <p>
+             <a class = "btn btn-primary" asp-controller = "Master" asp-action="AddMeasure">Добавить</a>
+         </p>
+        <iframe src = "/Master/ListMeasure" scrolling="yes"></iframe>
+        <h4>Мои заказы</h4>
+        <iframe src = "/Master/ListOrderMaster" scrolling="yes"></iframe>
+        <hr/>
+        <h4>Примерки</h4>
+         <p>
+             <a class = "btn btn-primary" asp-controller = "Master" asp-action="AddFitting">Добавить</a>
+         </p>
+        <iframe src = "/Master/ListFitting" scrolling="yes"></iframe>
+         <h4>Затраты на изделия</h4>
+         <p>
+             <a class = "btn btn-primary" asp-controller = "Master" asp-action="AddProductMaterial">Добавить</a>
+         </p>
+        <iframe src = "/Master/ListMaterialProduct" scrolling="yes"></iframe>
+    </div>
+    }
+</div>
+
+<style type="text/css">
+    iframe { 
+        width: 100%;
+        height: 50%;
+        border: 2px solid black;
+        border-radius: 25px;
+        padding: 10px;
+        box-shadow: 10px 5px 5px silver;
+        margin-top: 10px
+    }
+
+    a {
+        border-radius: 15px;
+    }
+
+</style>

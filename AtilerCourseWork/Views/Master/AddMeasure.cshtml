@@ -1,0 +1,92 @@
+﻿@model AtilerCourseWork.Models.Measure
+
+@{
+    ViewData["Title"] = "AddMeasure";
+}
+
+<h1>Добавить мерки</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddMeasure">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ClientId" class="control-label"></label>
+                <select asp-for="ClientId" class="form-control" asp-items="@ViewBag.ClientId" ></select>
+                <span asp-validation-for="ClientId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rost" class="control-label"></label>
+                <input asp-for="Rost" class="form-control" />
+                <span asp-validation-for="Rost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Grud" class="control-label"></label>
+                <input asp-for="Grud" class="form-control" />
+                <span asp-validation-for="Grud" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Talia" class="control-label"></label>
+                <input asp-for="Talia" class="form-control" />
+                <span asp-validation-for="Talia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Stegna" class="control-label"></label>
+                <input asp-for="Stegna" class="form-control" />
+                <span asp-validation-for="Stegna" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Stegno" class="control-label"></label>
+                <input asp-for="Stegno" class="form-control" />
+                <span asp-validation-for="Stegno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zapaiste" class="control-label"></label>
+                <input asp-for="Zapaiste" class="form-control" />
+                <span asp-validation-for="Zapaiste" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plecha" class="control-label"></label>
+                <input asp-for="Plecha" class="form-control" />
+                <span asp-validation-for="Plecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rukova" class="control-label"></label>
+                <input asp-for="Rukova" class="form-control" />
+                <span asp-validation-for="Rukova" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dlina" class="control-label"></label>
+                <input asp-for="Dlina" class="form-control" />
+                <span asp-validation-for="Dlina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dlina_Bruk" class="control-label"></label>
+                <input asp-for="Dlina_Bruk" class="form-control" />
+                <span asp-validation-for="Dlina_Bruk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Spina" class="control-label"></label>
+                <input asp-for="Spina" class="form-control" />
+                <span asp-validation-for="Spina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Visota_Sidina" class="control-label"></label>
+                <input asp-for="Visota_Sidina" class="form-control" />
+                <span asp-validation-for="Visota_Sidina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

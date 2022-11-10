@@ -1,0 +1,48 @@
+﻿@model IEnumerable<AtilerCourseWork.Models.Order>
+
+@{
+    ViewData["Title"] = "ListOrder";
+    Layout = null;
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.Reason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.IsRepair)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Start)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsCompleted)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Reason)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.IsRepair)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Start)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsCompleted)
+            </td>
+            <td>
+                <a class="btn btn-outline-success" asp-action="ChangeStatus" asp-route-id="@item.OrderId">Редактировать</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

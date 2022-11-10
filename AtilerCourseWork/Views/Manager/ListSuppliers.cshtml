@@ -1,0 +1,46 @@
+﻿@model IEnumerable<AtilerCourseWork.Models.Suppliers>
+
+@{
+    ViewData["Title"] = "ListSuppliers";
+    Layout = null;
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplierName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adress)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adress)
+            </td>
+            <td>
+                <a class="btn btn-outline-success" asp-action="SuppliersEdit" asp-route-id="@item.SuppliersId">Редактировать</a>
+            </td>
+            <td>
+                <a class="btn btn-outline-danger" asp-action="DeleteSuppliers" asp-route-id="@item.SuppliersId">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

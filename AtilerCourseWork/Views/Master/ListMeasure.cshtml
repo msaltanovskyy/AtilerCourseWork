@@ -1,0 +1,100 @@
+﻿@model IEnumerable<AtilerCourseWork.Models.Measure>
+
+@{
+    ViewData["Title"] = "Measure";
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grud)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Talia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stegna)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stegno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zapaiste)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rukova)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dlina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dlina_Bruk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Spina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Visota_Sidina)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grud)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Talia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stegna)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stegno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zapaiste)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Plecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rukova)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dlina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dlina_Bruk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Spina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Visota_Sidina)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

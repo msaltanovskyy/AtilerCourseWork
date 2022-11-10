@@ -1,0 +1,43 @@
+﻿@model IEnumerable<AtilerCourseWork.Models.Fitting>
+
+@{
+    ViewData["Title"] = "ListFitting";
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateDate)
+            </td>
+             <td>
+                <a class="btn btn-outline-danger" asp-action="DeleteFitting" asp-route-id="@item.FittingId">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
